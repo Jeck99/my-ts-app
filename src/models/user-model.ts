@@ -1,7 +1,12 @@
 export default interface IUser{
-    firstName:string;
-    lastName:string;
-    email:string;
-    address?:string;
-    birthDate:Date;
+    _id: string,
+    age: number,
+    name: {
+      last: string,
+      first: string
+    },
+    email: string,
+    index: number,
+    phone: string,
+    picture: string
 }

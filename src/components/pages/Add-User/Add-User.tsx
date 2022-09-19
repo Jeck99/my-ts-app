@@ -2,7 +2,6 @@ import "./Add-User.css";
 import {  useState } from "react";
 import IUser from "../../../models/user-model";
 import {postUser} from "../../../services/user.service"
-
 let tempUser: IUser;
 function AddUser() {
   const [user, setUser] = useState(tempUser);
@@ -17,9 +16,7 @@ function AddUser() {
   return (
     <div className="add-user">
       <h1>Add-User</h1>
-      {user?Object.keys(user).map((key) => <input type="text" name={key} onChange={changeInput} />):""}
-
-      
+      <input type="text" name="firstName" onChange={changeInput} />
       <button onClick={()=>postUser(user)}>SAVE</button>
     </div>
   );

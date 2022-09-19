@@ -21,6 +21,7 @@ function Home() {
       {usersArray
         ? Object.keys(usersArray[0]).map((key) => <h1>{key}</h1>)
         : ""} */}
+
       <table>
         <thead>
           <tr>
@@ -34,11 +35,13 @@ function Home() {
         <tbody>
           {usersArray?.map((user) => (
             <tr>
-              {Object.values(user).map((value) => (
-                typeof(value) =="string"?
-                <td>{value}</td>:
-                <td>{value.first+" "+ value.last}</td>
-              ))}
+              {Object.values(user).map((value) =>
+                typeof value != "object" ? (
+                  <td>{value}</td>
+                ) : (
+                  <td>{value.first + " " + value.last}</td>
+                )
+              )}
             </tr>
           ))}
         </tbody>

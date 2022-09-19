@@ -8,5 +8,5 @@ export default interface IUser{
     email: string,
     index: number,
     phone: string,
-    picture: string
+    picture?: string
 }
